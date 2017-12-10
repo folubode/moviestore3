@@ -54,7 +54,7 @@ default: &default
 development:
   <<: *default
   database: moviestore_development
-  username: olucube
+  username: postgres
   password:
 
   # The specified database role being used to connect to postgres.
@@ -90,7 +90,7 @@ development:
 test:
   <<: *default
   database: moviestore_test
-  username: olucube
+  username: postgres
   
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -114,5 +114,5 @@ test:
 production:
   <<: *default
   database: moviestore_production
-  username: olucube
+  username: postgres
   password: <%= ENV['MOVIESTORE_DATABASE_PASSWORD'] %>
