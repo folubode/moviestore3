@@ -1,0 +1,36 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table-transparent {
+  background-color: transparent;
+  border-collapse: collapse;
+  tr {
+    background-color: transparent !important;
+    border: 1px solid white;
+  }
+  td, th {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+  }
+}
+
+.role-select {
+  width: 118px;
+  border: none;
+}
+
+.border {
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  //border-right: 1px solid white;
+}
+
+.border-r {
+  border-right: 1px solid white;
+}
+
+.border-t {
+  border-top: 1px solid white;
+}

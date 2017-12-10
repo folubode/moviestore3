@@ -1,0 +1,26 @@
+<div class="form-container radius-box small-10 small-centered medium-8 large-5 columns">
+  <h3>Add Role</h3>
+  <%= form_for @role do |f| %>
+    <%= f.text_field :name, placeholder: :name, class: 'radius' %>
+
+    <%= f.label :creating, class: 'color-white' %>
+    <%= f.select :creating, options_for_select(Role.creating_options), {}, class: 'radius' %>
+
+    <%= f.label :updating, class: 'color-white' %>
+    <%= f.select :updating, options_for_select(Role.updating_options), {}, class: 'radius' %>
+
+    <%= f.label :deleting, class: 'color-white' %>
+    <%= f.select :deleting, options_for_select(Role.deleting_options), {}, class: 'radius' %>
+
+    <%= f.label :commenting, class: 'color-white' %>
+    <%= f.select :commenting, options_for_select(Role.commenting_options), {}, class: 'radius' %>
+
+    <%= f.label :user_control, class: 'color-white' %>
+    <%= f.select :user_control, options_for_select(Role.user_control_options), {}, class: 'radius' %>
+
+    <%= f.label :buying, class: 'color-white' %>
+    <%= f.select :buying, options_for_select(Role.buying_options), {}, class: 'radius' %>
+
+    <%= f.submit class: 'button radius' %>
+  <% end %>
+</div>

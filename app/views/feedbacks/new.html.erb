@@ -1,0 +1,11 @@
+<div class="form-container radius-box small-10 small-centered medium-8 large-6 columns">
+  <h3>Write Feedback</h3>
+  <%= form_tag feedbacks_path do %>
+
+    <%= email_field_tag :email, nil, placeholder: 'Email', class: 'radius' %>
+
+    <%= text_area_tag :content, nil, placeholder: 'Feedback Content', rows: 7, class: 'radius' %>
+
+    <%= submit_tag 'Send Feedback', class: 'button radius' %>
+  <% end %>
+</div>

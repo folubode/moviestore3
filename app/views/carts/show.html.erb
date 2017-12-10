@@ -1,0 +1,31 @@
+<% provide :title, 'My Cart' %>
+<div id="mycart" class="small-10 small-centered medium-8 large-8 column">
+  <div class="p1 glassy-bg mb1 text-center radius-l1 radius-r1">
+    <h4>My Cart</h4>
+    <p class="mb0"> You've selected <span class="cart-count"><%= current_user.cart_count %></span> movies!</p>
+  </div>
+
+  <% @cart_movies.each do |movie| %>
+    <div data-equalizer class="cart-movie medium-12 small-12 large-12 column mb1">
+      <div class="column large-2 medium-2 small-2 text-center p0" data-equalizer-watch>
+        <%= link_to movie do %>
+          <%= image_tag movie.poster, class: 'radius-l1' %>
+        <% end %>
+      </div>
+      <div class="column large-7 medium-7 small-7 glassy-bg text-center" data-equalizer-watch>
+        <p class="scale ptm"> <%= movie.title %> <em class="info"><%= movie.count_of_copies == 0 ? '(No Copies)' : nil %></em> </p>
+      </div>
+      <div class="column large-3 medium-3 small-3 primary-bg text-center radius-r1" data-equalizer-watch>
+        <%= link_to '', data: { targetUrl: remove_from_cart_path(movie)} do %>
+          <i class="fi-x right"></i>
+        <% end %>
+        <h4 class="scale">$ <%= movie.price %></h4>
+      </div>
+    </div>
+  <%end%>
+  <div class="large-12 medium-12 small-12 column text-center">
+    <% if @count > 0 %>
+      <%= button_to 'Buy Movies', buy_cart_path, class: 'button radius', data: { confirm: "Buy #{@count} Movies?"} %>
+    <% end %>
+  </div>
+</div>

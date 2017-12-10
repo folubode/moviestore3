@@ -1,0 +1,2 @@
+<h4 class="column">Movies added by <%= @user.name %></h4>
+<%= render partial: 'movies/list', locals: { user_id: @user.id } %>

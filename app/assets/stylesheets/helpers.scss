@@ -1,0 +1,150 @@
+$base-space-unit: 1.5em;
+
+.full-min-height { min-height: 74% }
+
+.ell { overflow: hidden }
+.clear { clear: both }
+
+.glassy-bg { background-color: rgba(0, 0, 0, 0.2) }
+.primary-bg { background-color: #B18806}
+
+
+// Displays
+.block { display: block }
+.inline-block { display: inline-block }
+
+
+.radius-box {
+  border-radius: 10px;
+}
+
+.radius-ls {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.radius-rs {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.radius-l1 {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.radius-r1 {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+// Margin helpers
+.m0            { margin: 0 !important }
+.mt0           { margin-top: 0 !important }
+.mr0           { margin-right: 0 !important }
+.mb0           { margin-bottom: 0 !important }
+.ml0           { margin-left: 0 !important }
+
+.ms            { margin: .25em !important }
+.mts           { margin-top: .25em !important }
+.mbs           { margin-bottom: .25em !important }
+.mrs           { margin-right: .25em !important }
+.mls           { margin-left: .25em !important }
+
+.mm            { margin: .5em !important }
+.mtm           { margin-top: .5em !important }
+.mbm           { margin-bottom: .5em !important }
+.mrm           { margin-right: .5em !important }
+.mlm           { margin-left: .5em !important }
+
+.ml            { margin: .75em !important }
+.mtl           { margin-top: .75em !important }
+.mbl           { margin-bottom: .75em !important }
+.mrl           { margin-right: .75em !important }
+.mll           { margin-left: .75em !important }
+
+.m1            { margin: $base-space-unit !important }
+.mt1           { margin-top: $base-space-unit !important }
+.mb1           { margin-bottom: $base-space-unit !important }
+.mr1           { margin-right: $base-space-unit !important }
+.ml1           { margin-left: $base-space-unit !important }
+
+.m2            { margin: $base-space-unit*2 !important }
+.mt2           { margin-top: $base-space-unit*2 !important }
+.mb2           { margin-bottom: $base-space-unit*2 !important }
+.mr2           { margin-right: $base-space-unit*2 !important }
+.ml2           { margin-left: $base-space-unit*2 !important }
+
+// Padding helpers
+.p0            { padding: 0 !important }
+.pt0           { padding-top: 0 !important }
+.pr0           { padding-right: 0 !important }
+.pb0           { padding-bottom: 0 !important}
+.pl0           { padding-left: 0 !important }
+
+.ps            { padding: .25em !important }
+.pts           { padding-top: .25em !important }
+.pbs           { padding-bottom: .25em !important }
+.prs           { padding-right: .25em !important }
+.pls           { padding-left: .25em !important }
+
+.pm            { padding: .5em !important }
+.ptm           { padding-top: .5em !important }
+.pbm           { padding-bottom: .5em !important }
+.prm           { padding-right: .5em !important }
+.plm           { padding-left: .5em !important }
+
+.p1            { padding: 1em !important }
+.pt1           { padding-top: 1em !important }
+.pr1           { padding-right: 1em !important }
+.pb1           { padding-bottom: 1em !important }
+.pl1           { padding-left: 1em !important }
+
+.p2            { padding: 1em*2 !important }
+.pt2           { padding-top: 1em*2 !important }
+.pr2           { padding-right: 1em*2 !important }
+.pb2           { padding-bottom: 1em*2 !important }
+.pl2           { padding-left: 1em*2 !important }
+
+// Padding small
+.pads           { padding: .25em !important }
+
+// Padding medium
+.padm           { padding: .5em !important }
+
+// Padding large
+.padl           { padding: 1em !important }
+
+// Padding small left :: right
+.padsx {
+  padding-left: .25em;
+  padding-right: .25em;
+}
+
+// Padding medium left :: right
+.padmx {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+// Padding large left :: right
+.padlx {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+// Padding small top :: bottom
+.padsy {
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+
+// Padding medium top :: bottom
+.padmy {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+// Padding large top :: bottom
+.padly {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}

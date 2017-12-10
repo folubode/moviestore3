@@ -1,0 +1,40 @@
+<% provide :title, @movie.title %>
+
+<div class="large-3 medium-3 small-12 column">
+  <%#= image_tag @movie.poster %>
+  <iframe width="220" height="325" src="<%= @movie.thrailer_url %>" frameborder="0" gesture="media" allow="encrypted-media"></iframe>
+</div>
+
+<div class="large-6 medium-6 small-9 column">
+  <h3>
+    <%= @movie.title %>
+    (<%= @movie.release_year %>)
+    <%= link_to @movie.imdb do %>
+      <%= image_tag asset_path('imdb_logo.png') %>
+    <% end %>
+  </h3>
+</div>
+
+<div class="large-3 medium-3 small-3 column">
+  <% if current_user && (current_user.role_id == 2 ||
+    (current_user.role_id == 1 && @movie.seller_id == current_user.id)) %>
+    <%= link_to 'Edit Movie', edit_movie_path(@movie.id), class: 'button p15 right mb0 radius' %>
+  <% end %>
+</div>
+
+<div class="large-9 medium-9 small-12 column">
+  <p class="label movie-label radius mb1">$ <%= @movie.price %></p>
+
+  <p><%= @movie.description %></p>
+<!--/div-->
+
+<% if signed_in? && current_user.role_id == 1 %>
+  <%= link_to '', class: 'button radius', data: { target:    @cart_action, addUrl: add_to_cart_path(@movie),
+                                               removeUrl: remove_from_cart_path(@movie)} do %>
+    <i class="fi-shopping-cart"></i>
+    <span><%= @cart_action %></span> Cart
+  <% end %>
+<% end %>
+<!--div class="large-9 small-12 column"-->
+  <%= commontator_thread(@movie) %>
+</div>

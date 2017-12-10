@@ -1,0 +1,149 @@
+@import "foundation_and_overrides";
+
+// Default font family
+@font-face {
+  font-family: 'gotham-rounded';
+  src: url(gotham-rounded-medium.otf);
+}
+// Body background
+body {
+  background: url(body_bg.png) center;
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
+// Logo
+.title-area{
+  a {
+    padding:0 !important;
+    font-size: 28px;
+  }
+  i {
+    font-size: 30px;
+    position: relative;
+    top: 2px;
+  }
+}
+
+.top-bar.expanded .title-area {
+  background-color: transparent;
+}
+
+.top-bar {
+  background-color: transparent;
+  //margin-bottom: 25px;
+  border-bottom: 1px solid white;
+}
+// Topbar items
+.top-bar-section ul li {
+  background: transparent;
+  a {
+    background-color: transparent !important;
+    &:hover {
+      background-color: #333333 !important;
+    }
+  }
+}
+// Forms
+.form-container {
+  padding: 0;
+  .switch > div {
+    position: relative;
+    top: -5px;
+  }
+}
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*input, textarea, select, .uneditable-input {
+  border: none;
+  width: 100%;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  @include box_sizing;
+  outline: none;
+}*/
+
+.input-form-border {
+  padding: 12px 10px;
+  border: 1px solid #dbdbdb;
+  background: #fff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  textarea {
+    resize: none;
+    overflow: auto;
+  }
+}
+
+
+.p15 {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#main-content {
+  margin-top: 15px;
+}
+
+.inline {
+  display: inline;
+}
+
+.p15left {
+  padding-left: 15px;
+}
+
+.p15right {
+  padding-right: 15px;
+}
+
+.right {
+  float: right;
+}
+
+.button {
+  padding: 10px 24px 9px;
+}
+
+a#preview {
+  width: 100%;
+}
+
+.alert-box {
+  margin-bottom: 0;
+}
+
+.pagination {
+  .previous_page, .next_page, a {
+    @extend .button;
+    @extend .radius;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 0;
+  }
+  .current {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+}
+
+footer hr {
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
+}
+
+.info {
+  color: lightgray;
+}
+
+.color-white {
+  color: white;
+}

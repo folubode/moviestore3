@@ -1,0 +1,6 @@
+<h4 class="inline p15left">Featured Movies</h4>
+<%# if current_user && current_user.role.creating == 1 %>
+<% if current_user && current_user.role_id == 1 %>
+  <%= link_to 'Add Movie', new_movie_path, class: 'button p15 right mb0 radius' %>
+<% end %>
+<%= render 'movies/list' %>

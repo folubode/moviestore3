@@ -1,0 +1,69 @@
+<%= form_for movie do |f| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, 'error') %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :title, class: 'radius', placeholder: :title, value: movie.title %>
+  </div>
+
+  <div class="field">
+    <%= f.number_field :release_year, class: 'radius', placeholder: :release_year, value: movie.release_year %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :price, class: 'radius', placeholder: :price, value: movie.price %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :description, class: 'radius', placeholder: :description, rows: 5, value: movie.description %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :imdb_id, class: 'radius', placeholder: :imdb_id, value: movie.imdb_id %>
+  </div>
+
+  <div class="field">
+    <div class="small-9 large-10 column p0">
+      <%= f.text_field :poster_url, class: 'radius', placeholder: :poster_url, value: movie.poster_url %>
+    </div>
+    <div class="small-3 large-2 column pr0">
+      <a href="#" class="button radius" id="preview">Preview</a>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :count_of_copies, class: 'radius', placeholder: :count_of_copies, value: movie.count_of_copies %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :thailer_url, class: 'radius', placeholder: "e.g. https://www.youtube.com/embed/So97pmyDbVw", value: movie.thrailer_url %>
+  </div>
+
+  <%= f.hidden_field :seller_id, value: movie.seller_id || current_user.id %>
+<% end %>
+<% if updating %>
+  <%= form_tag movie_path(movie.id),
+                data: { confirm: 'Are you sure?' }, method: :delete,
+                id: 'delete_movie' do %>
+  <% end %>
+<% end %>
+<div class="actions">
+  <% if updating %>
+    <%= submit_tag 'Update Movie', form: "edit_movie_#{movie.id}", class: 'button radius',
+                                   onclick: "!this.form&&$('#'+$(this).attr('form')).submit()" %>
+    <%= submit_tag 'Delete Movie', form: 'delete_movie', class: 'button radius',
+                                   onclick: "!this.form&&$('#'+$(this).attr('form')).submit()"%>
+  <% else %>
+    <%= submit_tag 'Create Movie', form: 'new_movie', class: 'button radius',
+                                   onclick: "!this.form&&$('#'+$(this).attr('form')).submit()"%>
+  <% end %>
+</div>
